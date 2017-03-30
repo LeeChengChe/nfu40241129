@@ -9,18 +9,18 @@ from numpy import *
 
 #第一個範例
 #矩陣相加錯誤示範
-x = [1,2,3]
-y = [4,5,6]
+x = [10,20,30]
+y = [40,50,60]
 print x+y
 
 #正確示範
-a = np.array([1, 2, 3])
-b = np.array([2, 4, 6])
+a = np.array([10, 20, 30])
+b = np.array([20, 40, 60])
 print a+b
 
 #第二個範例
-a=np.array([1,3,2])
-b=np.array([-2,1,-1])
+a=np.array([2,4,5])
+b=np.array([-3,2,-1])
 
 la=np.sqrt(a.dot(a))
 lb=np.sqrt(b.dot(b))
@@ -41,9 +41,9 @@ angle2=angle*360/2/np.pi
 print("----轉換單位為角度----")
 print (angle2)
 
-a=np.array([[3, 4], [2, 3]])
-b=np.array([[1, 2], [3, 4]])
-c=np.mat([[3, 4], [2, 3]])
+a=np.array([[2, 5], [3, 2]])
+b=np.array([[2, 3], [2, 5]])
+c=np.mat([[2, 4], [2, 3]])
 d=np.mat([[1, 2], [3, 4]])
 e=np.dot(a,b)
 f=np.dot(c,d)
@@ -55,10 +55,10 @@ print (e)
 print (f)
 
 a=np.random.randint(1, 10, (3, 5))
-
+#a=np.random.randint(1, 10, 8)
 print (a)
 
-a = mat([[1, 2, -1], [3, 0, 1], [4, 2, 1]])
+a = mat([[1, 3, -1], [2, 0, 1], [3, 2, 1]])
 
 print linalg.det(a)
 
@@ -68,7 +68,6 @@ x = np.arange(0,10,0.1)
 y = np.sin(x)
 pyplot.plot(x,y)
 pyplot.show()
-
 
 
 ```
