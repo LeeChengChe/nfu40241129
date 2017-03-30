@@ -119,7 +119,22 @@ plt.show()
 ```
 
 
+###Part 2-1
+```python
+############資料讀取###########
+dataExcel = pd.read_excel('C:/Users/40341127/Downloads/test.xls')
+print(dataExcel)
 
+############統計量###########
+
+print("最大值= {}".format(df_friendsGroup["A"].max()))
+print("最小值= {}".format(df_friendsGroup["A"].min()))
+print("平均值= {}".format(df_friendsGroup["A"].mean()))
+print("變異數= {}".format(df_friendsGroup["A"].var()))
+print("標準差= {}".format(df_friendsGroup["A"].std()))
+print("中位數= {}".format(df_friendsGroup["A"].median()))
+
+```
 
 
 
