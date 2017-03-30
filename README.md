@@ -1,6 +1,6 @@
 阿哲筆記
 
-
+###Part 1
 ```python
 
 #coding=utf-8
@@ -71,7 +71,7 @@ pyplot.show()
 
 
 ```
-
+###Part 2
 ```python
 #coding=utf-8
 import numpy as np
