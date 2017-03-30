@@ -1,6 +1,6 @@
 阿哲筆記
 
-###Part 1
+##Part 1
 ```python
 
 #coding=utf-8
@@ -71,7 +71,7 @@ pyplot.show()
 
 
 ```
-###Part 2
+##Part 2
 ```python
 #coding=utf-8
 import numpy as np
@@ -119,7 +119,31 @@ plt.show()
 ```
 
 
-###Part 2-1
+###Part 2-1 Pandas介紹
+```python
+呼叫指定的一個ROW
+DataFrame[“Column_Name"]
+呼叫多個指定ROW
+select = DataFrame[[" Column_Name ", " Column_Name 2",……]]
+select.head(Col_Number)
+呼叫指定的一個COL
+DataFrame.ix[index]
+呼叫多個指定COL
+DataFrame.ix[START:END]
+
+```
+###Part 2-1 Pandas介紹
+```python
+CSV檔
+data = pd.read_csv('file.csv')
+EXCEL
+data = pd.read_excel('file.xls', 'sheet')
+Html
+data = pd.read_html('url')
+
+```
+
+###Part 2-2 資料讀取
 ```python
 ############資料讀取###########
 dataExcel = pd.read_excel('C:/Users/40341127/Downloads/test.xls')
@@ -136,10 +160,24 @@ print("中位數= {}".format(df_friendsGroup["A"].median()))
 
 ```
 
+###Part 2-3 Pandas統計量之運用
+```python
+求最大最小值
+DataFrame.max(), DataFrame.min()
+求平均值
+DataFrame.mean()
+求變異數
+DataFrame.var()
+求標準差
+DataFrame.std()
+求中位數
+DataFrame.median()
 
 
+#利用describe() 可以更方便查詢
+DataFrame.describe()
 
-
+```
 
 
 
