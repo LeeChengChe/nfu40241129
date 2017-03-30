@@ -1,65 +1,43 @@
 #coding=utf-8
 import numpy as np
 from numpy import *
+import matplotlib.pyplot as plt
+import pandas as pd
 
-#第一個範例
-#矩陣相加錯誤示範
-x = [10,20,30]
-y = [40,50,60]
-print x+y
 
-#正確示範
-a = np.array([10, 20, 30])
-b = np.array([20, 40, 60])
-print a+b
+num_friends=pd.Series([100,49,41,40,25,21,21,19,19,18,18,16,
+15,15,15,15,14,14,13,13,13,13,12,12,11,
+10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,
+7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
 
-#第二個範例
-a=np.array([2,4,5])
-b=np.array([-3,2,-1])
+num_newFriends =  pd.Series(np.sort(np.random.binomial(203,0.06,204))[::-1]) #用A series去建立B series
+df_friendsGroup = pd.DataFrame({"A":num_friends,"B":num_newFriends}) #將兩張series合成為一個DataFrame
 
-la=np.sqrt(a.dot(a))
-lb=np.sqrt(b.dot(b))
-print("----計算向量長度---")
-print (la,lb)
+print("印出Col A")
+print(df_friendsGroup["A"])
+print("印出Col A及Col B的前10row")
+select = df_friendsGroup[["A", "B"]]
+print(select.head(10))
+print("印出row5")
+print(df_friendsGroup.ix[5])
+print("印出row5~row9")
+print(df_friendsGroup[5:10])
 
-cos_angle=a.dot(b)/(la*lb)
+print(df_friendsGroup.describe()) #統計量
+print(df_friendsGroup.corr()) #相關係數
+print("cov = {}".format(num_friends.cov(num_newFriends))) #共變異數
 
-print("----計算cos ----")
-print (cos_angle)
+############圖表###########
+plt.hist(df_friendsGroup["A"],bins=25)
+plt.hist(df_friendsGroup["B"],bins=25, color="r")
+plt.xlabel("# of Friends")
+plt.ylabel("# of People")
+plt.show()
 
-angle=np.arccos(cos_angle)
-
-print("----計算夾角(單位為π)----")
-print (angle)
-
-angle2=angle*360/2/np.pi
-print("----轉換單位為角度----")
-print (angle2)
-
-a=np.array([[2, 5], [3, 2]])
-b=np.array([[2, 3], [2, 5]])
-c=np.mat([[2, 4], [2, 3]])
-d=np.mat([[1, 2], [3, 4]])
-e=np.dot(a,b)
-f=np.dot(c,d)
-print("----乘法運算----")
-print (a*b)
-print (c*d)
-print("----矩陣相乘----")
-print (e)
-print (f)
-
-a=np.random.randint(1, 10, (3, 5))
-#a=np.random.randint(1, 10, 8)
-print (a)
-
-a = mat([[1, 3, -1], [2, 0, 1], [3, 2, 1]])
-
-print linalg.det(a)
-
-from matplotlib import pyplot
-
-x = np.arange(0,10,0.1)
-y = np.sin(x)
-pyplot.plot(x,y)
-pyplot.show()
